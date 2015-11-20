@@ -2,9 +2,9 @@
 	name = camercu
 	email = unterbergerc@live.com
 [credential]
-	helper = osxkeychain
+	helper = 
 [core]
-	editor = subl -nw
+	editor = nano
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	safecrlf = true

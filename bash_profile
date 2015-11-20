@@ -11,49 +11,40 @@
 
 
 # Load .bashrc if it exists
-test -e ~/.bashrc && source ~/.bashrc
-
-# Homebrew Cask - Global Applications Folder
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# Homebrew PATH
-# export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-# ^^ no longer needed because I manually changed the /etc/profile and /etc/paths
-# files to set this order as desired.
-# NOTE: for future appending of items to path, can use files in /etc/path.d
-# along with /usr/libexec/path_helper tool to (man page: path_helper(8))
-# ref: http://www.softec.lu/site/DevelopersCorner/MasteringThePathHelper
-
-# Homebrew bash-completion
-if [ -e $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
-fi
+#test -e ~/.bashrc && source ~/.bashrc
 
 # Master Password Name
 export MP_FULLNAME="Cameron Charles Unterberger"
-
-# Setting PATH for Python 2.7
-# export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-
-# pip should only run if there is a virtualenv currently activated
-# export PIP_REQUIRE_VIRTUALENV=true
-
-# ls colors <https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/ls.1.html>
-export CLICOLOR=1
-export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd # default Linux colors
-# export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx # for black background
-# export LSCOLORS=ExFxCxDxBxegedabagacad # white background
 
 # set up the editor for programs that want them
 export EDITOR='nano'
 export VISUAL='nano'
 
 # Ensure history appends to disk (rather than overwrite, when multi windows open).
-shopt -s histappend
+#shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
 # save multiline commands as one command
 shopt -s cmdhist
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+#HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+#HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # No duplicate entries in history. Also ignore (don't put in history)
 # duplicate commands and commands preceded by a space (useful if you don't 

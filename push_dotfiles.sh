@@ -1,15 +1,19 @@
 # !/usr/bin/env bash
 
-rm -f ~/.bash_profile
-rm -f ~/.bashrc
-rm -f ~/.git-prompt.sh
-rm -f ~/.gitconfig
-rm -f ~/.gitignore_global
-rm -f ~/.inputrc
-rm -f ~/.gnupg/gpg.conf
-rm -f ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
-
 DOTFILE_DIR=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd ) # absolute path to dir
+old_dir="${DOTFILE_DIR}/old"
+
+mkdir $old_dir
+
+mv ~/.bash_profile $old_dir
+mv ~/.bashrc $old_dir
+mv ~/.git-prompt.sh $old_dir
+mv ~/.gitconfig $old_dir
+mv ~/.gitignore_global $old_dir
+mv ~/.inputrc $old_dir
+mv ~/.gnupg/gpg.conf $old_dir
+mv ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings $old_dir
+
 
 ln -s "${DOTFILE_DIR}/bash_profile" ~/.bash_profile
 ln -s "${DOTFILE_DIR}/bashrc" ~/.bashrc
