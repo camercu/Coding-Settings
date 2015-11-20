@@ -2,7 +2,7 @@
 	name = camercu
 	email = unterbergerc@live.com
 [credential]
-	helper = 
+	helper = cache
 [core]
 	editor = nano
 	excludesfile = ~/.gitignore_global
