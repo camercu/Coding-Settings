@@ -72,9 +72,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -l'
+alias ll='ls -lh'
 #alias la='ls -A'
-alias l='ls -CF'
+alias l='ls'
 alias lsl='ll'
 
 ## some useful aliases, so new users don't hurt themselves
@@ -109,10 +109,10 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 GLOBECHAR=$'\xf0\[\x9f\x8c\x8e\] '
 
 # Admin Prompt
-# export PS1="${GLOBECHAR}\[$CYAN\]\$(__git_ps1)\[$WHITE\] \w \$ \[$_RESET_ALL\]"
+# PS1="${GLOBECHAR}\[$CYAN\]\$(__git_ps1)\[$WHITE\] \w \$ \[$_RESET_ALL\]"
 
 # My prompt
-export PS1="\[$YELLOW\]\u\[$CYAN\]\$(__git_ps1)\[$WHITE\] \W \$ \[$_RESET_ALL\]"
+PS1="\[$YELLOW\]\u\[$CYAN\]\$(__git_ps1)\[$WHITE\] \W \$ \[$_RESET_ALL\]"
   # note: PS1 needs '\[' and '\]' to escape non-printable characters, 
   # keeping char count in line w/ displayed text (new line happens at right place).
   # '\u' adds the name of the current user to the prompt.

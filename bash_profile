@@ -14,7 +14,7 @@
 test -f ~/.bashrc && source ~/.bashrc
 
 # Master Password Name
-export MP_FULLNAME="Cameron Charles Unterberger"
+#export MP_FULLNAME="Cameron Charles Unterberger"
 
 # set up the editor for programs that want them
 export EDITOR='nano'
@@ -23,15 +23,15 @@ export VISUAL='nano'
 # Ensure history appends to disk (rather than overwrite, when multi windows open).
 # See bash(1) for more options
 shopt -s histappend
-export PROMPT_COMMAND='history -a'
+PROMPT_COMMAND='history -a'
 
 # save multiline commands as one command
 shopt -s cmdhist
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=1000
-export HISTFILESIZE=2000
-export HISTFILE=~/.bash_history
+HISTSIZE=1000
+HISTFILESIZE=2000
+HISTFILE=~/.bash_history
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -45,7 +45,7 @@ shopt -s checkwinsize
 # No duplicate entries in history. Also ignore (don't put in history)
 # duplicate commands and commands preceded by a space (useful if you don't 
 # want a command recorded in your history
-export HISTCONTROL="erasedups:ignoreboth"
+HISTCONTROL="erasedups:ignoreboth"
 
 # have bash display expanded history commands before executing (paranoid)
 shopt -s histverify # somewhat redundant with magic-space
@@ -53,7 +53,7 @@ shopt -s histverify # somewhat redundant with magic-space
 # don't put 'exit' command in history
 # can string commands together with "cmd1:cmd2"
 # wildcard "*" also ok
-export HISTIGNORE="exit"
+export HISTIGNORE="logout:exit:history*"
 
 # small typos ignored in directory names
 shopt -s cdspell

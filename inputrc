@@ -19,20 +19,20 @@ $include /etc/inputrc
 # set editing-mode vi
 
 # don't strip characters to 7 bits when reading
-set input-meta on
+#set input-meta on
 
 # allow iso-latin1 characters to be inserted rather
 # than converted to prefix-meta sequences
-set convert-meta off
+#set convert-meta off
 
 # display characters with the eighth bit set directly
 # rather than as meta-prefixed characters
-set output-meta on
+#set output-meta on
 
-# if there are more than 150 possible completions for
+# if there are more than 50 possible completions for
 # a word, ask the user if he wants to see all of them
 # default = 100
-set completion-query-items 150
+set completion-query-items 50
 
 # words which have more than one possible completion cause the matches 
 # to be listed immediately instead of ringing the bell.
@@ -54,12 +54,6 @@ set colored-stats on
 "\e[C": forward-char			# right arrow
 "\e[D": backward-char			# left arrow
 "\t": menu-complete				# tab
-"\e[1~": beginning-of-line
-"\e[4~": end-of-line
-"\e[5C": forward-word
-"\e[5D": backward-word
-"\e\e[C": forward-word
-"\e\e[D": backward-word
 Control-j: menu-complete
 Control-k: menu-complete-backward
 
